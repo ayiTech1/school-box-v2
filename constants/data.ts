@@ -13,18 +13,20 @@ export const quickLinksData = [
   { title: "FAQs", href: "/faqs" },
   { title: "Help", href: "/help" },
 ];
+
+
 export const categoriesData = [
-  { title: "Mobiles", href: "mobiles" },
-  { title: "Appliances", href: "appliances" },
-  { title: "Smartphones", href: "smartphones" },
-  { title: "Air Conditioners", href: "air-conditioners" },
-  { title: "Washing Machine", href: "washing-machine" },
-  { title: "Kitchen Appliances", href: "kitchen-appliances" },
-  { title: "gadget accessories", href: "gadget-accessories" },
+    {title:"Boarding & Dormitory Essentials", href:"/boarding-dormitory-essentials"},
+    {title:"Kitchen/Feeding Items", href:"/kitchen-feeding-items"},
+    {title:"Toiletries & Personal Care", href:"/category/chopbox"},
+    {title:"School Supplies", href:"/category/school-supplies"},
+    {title:"School Uniforms", href:"/category/school-uniforms"},
+    {title:"Bags & Accessories", href:"/category/bags-accessories"},
+    {title:"Academic Materials", href:"/category/Academic Materials"},
 ];
-export const productType = [
-  { title: "Gadget", value: "gadget" },
-  { title: "Appliances", value: "appliances" },
-  { title: "Refrigerators", value: "refrigerators" },
-  { title: "Others", value: "others" },
-];
+export const productType =[
+    {title:"Basic Needs", value: "basic-needs" },
+    {title:"Cleaning Materials", value: "cleaning-materials" },
+    {title:"Food Items", value: "food-items" },
+    { title: "Learning Materials", value: "learning-materials" },
+]
