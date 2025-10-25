@@ -27,6 +27,5 @@ export const categoriesData = [
 export const productType =[
     {title:"Basic Needs", value: "basic-needs" },
     {title:"Cleaning Materials", value: "cleaning-materials" },
-    {title:"Food Items", value: "food-items" },
     { title: "Learning Materials", value: "learning-materials" },
 ]
