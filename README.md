@@ -1,6 +1,6 @@
 # 🎓 School Box – E-commerce Platform for Senior High Schools in Ghana
 
-🌐 **Live Website:** [https://school-box.vercel.app](https://school-box.vercel.app)
+🌐 **Live Website:** [https://school-box-v2-bs92.vercel.app/](https://school-box-v2-bs92.vercel.app/)
 
 School Box is a modern e-commerce platform designed to simplify how students and parents in Ghana purchase approved school items and supplies for Senior High Schools. The platform provides a convenient, trustworthy, and organized shopping experience that connects parents and students.
 
