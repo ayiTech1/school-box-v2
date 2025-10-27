@@ -1,7 +1,7 @@
 import NoAccess from "@/components/no-access";
 import WishListProducts from "@/components/wish-list-products";
 import { currentUser } from "@clerk/nextjs/server";
-import React from "react";
+
 
 const WishListPage = async () => {
   const user = await currentUser();
