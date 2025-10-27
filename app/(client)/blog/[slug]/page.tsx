@@ -1,6 +1,6 @@
-import Container from "@/components/Container";
-import Title from "@/components/Title";
-import { SINGLE_BLOG_QUERYResult } from "@/sanity.types";
+import Container from "@/components/container";
+import Title from "@/components/title";
+import { Blog, SINGLE_BLOG_QUERYResult } from "@/sanity.types";
 import { urlFor } from "@/sanity/lib/image";
 import {
   getBlogCategories,
@@ -21,7 +21,10 @@ const SingleBlogPage = async ({
   params: Promise<{ slug: string }>;
 }) => {
   const { slug } = await params;
-  const blog: SINGLE_BLOG_QUERYResult = await getSingleBlog(slug);
+  const result = await getSingleBlog(slug);
+  const blog: SINGLE_BLOG_QUERYResult | null = Array.isArray(result)
+    ? result[0] || null
+    : result;
   if (!blog) return notFound();
 
   return (
@@ -37,21 +40,20 @@ const SingleBlogPage = async ({
               className="w-full max-h-[500px] object-cover rounded-lg"
             />
           )}
+        
           <div>
             <div className="text-xs flex items-center gap-5 my-7">
-              <div className="flex items-center relative group cursor-pointer">
-                {blog?.blogcategories?.map(
-                  (item: { title: string }, index: number) => (
-                    <p
-                      key={index}
-                      className="font-semibold text-shop_dark_green tracking-wider"
-                    >
-                      {item?.title}
-                    </p>
-                  )
-                )}
-                <span className="absolute left-0 -bottom-1.5 bg-lightColor/30 inline-block w-full h-[2px] group-hover:bg-shop_dark_green hover:cursor-pointer hoverEffect" />
-              </div>
+             <div className="flex items-center relative group cursor-pointer">
+                    {blog?.blogcategories?.map((item, index) => (
+                      <p
+                        key={index}
+                        className="font-semibold text-shop_dark_green tracking-wider"
+                      >
+                        {item?.title}
+                      </p>
+                    ))}
+                    <span className="absolute left-0 -bottom-1.5 bg-lightColor/30 inline-block w-full h-0.5 group-hover:bg-shop_dark_green hover:cursor-pointer hoverEffect" />
+                  </div>
               <p className="flex items-center gap-1 text-lightColor relative group hover:cursor-pointer hover:text-shop_dark_green hoverEffect">
                 <Pencil size={15} /> {blog?.author?.name}
                 <span className="absolute left-0 -bottom-1.5 bg-lightColor/30 inline-block w-full h-[2px] group-hover:bg-shop_dark_green hoverEffect" />
@@ -205,7 +207,7 @@ const BlogLeft = async ({ slug }: { slug: string }) => {
               key={index}
               className="text-lightColor flex items-center justify-between text-sm font-medium"
             >
-              <p>{blogcategories[0]?.title}</p>
+              <p>{blogcategories?.[0]?.title ?? ""}</p>
               <p className="text-darkColor font-semibold">{`(1)`}</p>
             </div>
           ))}
@@ -214,7 +216,7 @@ const BlogLeft = async ({ slug }: { slug: string }) => {
       <div className="border border-lightColor p-5 rounded-md mt-10">
         <Title className="text-base">Latest Blogs</Title>
         <div className="space-y-4 mt-4">
-          {blogs?.map((blog: Blog, index: number) => (
+          {blogs?.map((blog, index) => (
             <Link
               href={`/blog/${blog?.slug?.current}`}
               key={index}
@@ -241,3 +243,4 @@ const BlogLeft = async ({ slug }: { slug: string }) => {
 };
 
 export default SingleBlogPage;
+

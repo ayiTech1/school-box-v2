@@ -1,6 +1,6 @@
 "use client";
 import { BRANDS_QUERYResult, Category, Product } from "@/sanity.types";
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import Container from "./container";
 import Title from "./title";
 import CategoryList from "./shop/category-list";
