@@ -56,12 +56,12 @@ const SingleBlogPage = async ({
                   </div>
               <p className="flex items-center gap-1 text-lightColor relative group hover:cursor-pointer hover:text-shop_dark_green hoverEffect">
                 <Pencil size={15} /> {blog?.author?.name}
-                <span className="absolute left-0 -bottom-1.5 bg-lightColor/30 inline-block w-full h-[2px] group-hover:bg-shop_dark_green hoverEffect" />
+                <span className="absolute left-0 -bottom-1.5 bg-lightColor/30 inline-block w-full h-0.5 group-hover:bg-shop_dark_green hoverEffect" />
               </p>
               <p className="flex items-center gap-1 text-lightColor relative group hover:cursor-pointer hover:text-shop_dark_green hoverEffect">
                 <Calendar size={15} />{" "}
                 {dayjs(blog.publishedAt).format("MMMM D, YYYY")}
-                <span className="absolute left-0 -bottom-1.5 bg-lightColor/30 inline-block w-full h-[2px] group-hover:bg-shop_dark_green hoverEffect" />
+                <span className="absolute left-0 -bottom-1.5 bg-lightColor/30 inline-block w-full h-0.5 group-hover:bg-shop_dark_green hoverEffect" />
               </p>
             </div>
             <h2 className="text-2xl font-bold my-5">{blog?.title}</h2>
@@ -164,7 +164,7 @@ const SingleBlogPage = async ({
                             return (
                               <Link
                                 href={value.href}
-                                className="font-medium text-gray-950 underline decoration-gray-400 underline-offset-4 data-[hover]:decoration-gray-600"
+                                className="font-medium text-gray-950 underline decoration-gray-400 underline-offset-4 data-hover:decoration-gray-600"
                               >
                                 {children}
                               </Link>
@@ -228,7 +228,7 @@ const BlogLeft = async ({ slug }: { slug: string }) => {
                   alt="blogImage"
                   width={100}
                   height={100}
-                  className="w-16 h-16 rounded-full object-cover border-[1px] border-shop_dark_green/10 group-hover:border-shop_dark_green hoverEffect"
+                  className="w-16 h-16 rounded-full object-cover border border-shop_dark_green/10 group-hover:border-shop_dark_green hoverEffect"
                 />
               )}
               <p className="line-clamp-2 text-sm text-lightColor group-hover:text-shop_dark_green hoverEffect">

@@ -9,7 +9,7 @@ import PriceFormatter from "./price-formatter";
 import QuantityButtons from "./quantity-buttons";
 
 interface Props {
-  product: Product;
+    product: Product | any; // Allow product to be a single object or adjust Product type to match actual product shape  
   className?: string;
 }
 

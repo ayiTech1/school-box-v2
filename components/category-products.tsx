@@ -19,9 +19,9 @@ const CategoryProducts = ({ categories, slug }: Props) => {
   const [loading, setLoading] = useState(false);
   const router = useRouter();
   const handleCategoryChange = (newSlug: string) => {
-    if (newSlug === currentSlug) return; // Prevent unnecessary updates
+    if (newSlug === currentSlug) return; 
     setCurrentSlug(newSlug);
-    router.push(`/category/${newSlug}`, { scroll: false }); // Update URL without
+    router.push(`/category/${newSlug}`, { scroll: false }); 
   };
 
   const fetchProducts = async (categorySlug: string) => {

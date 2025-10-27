@@ -243,6 +243,7 @@ export type Order = {
 };
 
 export type Product = {
+  map(arg0: (product: any) => JSX.Element): import("react").ReactNode | Iterable<import("react").ReactNode>;
   _id: string;
   _type: "product";
   _createdAt: string;
@@ -861,6 +862,7 @@ export type OTHERS_BLOG_QUERYResult = Array<{
 
 // Query TypeMap
 import "@sanity/client";
+import { JSX } from "react/jsx-runtime";
 declare module "@sanity/client" {
   interface SanityQueries {
     "*[_type=='brand'] | order(name asc) ": BRANDS_QUERYResult;

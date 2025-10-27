@@ -13,7 +13,13 @@ const LATEST_BLOG_QUERY = defineQuery(
 
 const DEAL_PRODUCTS = defineQuery(
   `*[_type == 'product' && status == 'hot'] | order(name asc){
-    ...,"categories": categories[]->title
+    ...,
+    categories[]->{
+      _ref,
+      _type,
+      _key,
+      title
+    }
   }`
 );
 

@@ -1,6 +1,6 @@
 import { Product } from "@/sanity.types";
 import { getBrand } from "@/sanity/queries";
-import React from "react";
+
 import {
   Accordion,
   AccordionContent,
@@ -11,7 +11,7 @@ import {
 const ProductCharacteristics = async ({
   product,
 }: {
-  product: Product | null | undefined;
+  product: Product | null | undefined | any;
 }) => {
   const brand = await getBrand(product?.slug?.current as string);
   console.log(brand);

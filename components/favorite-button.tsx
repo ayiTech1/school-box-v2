@@ -11,7 +11,7 @@ const FavoriteButton = ({
   product,
 }: {
   showProduct?: boolean;
-  product?: Product | null | undefined;
+  product?: Product | null | undefined | any;
 }) => {
   const { favoriteProduct, addToFavorite } = useStore();
   const [existingProduct, setExistingProduct] = useState<Product | null>(null);
