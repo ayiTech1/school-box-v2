@@ -82,12 +82,12 @@ export const productType = defineType({
       title: "Product Type",
       type: "string",
       options: {
-        list: [
-          { title: "Gadget", value: "gadget" },
-          { title: "Appliances", value: "appliances" },
-          { title: "Refrigerators", value: "refrigerators" },
-          { title: "Others", value: "others" },
-        ],
+        list:[
+            {title:"Basic Needs", value: "basic-needs" },
+            {title:"Cleaning Materials", value: "cleaning-materials" },
+            { title: "Learning Materials", value: "learning-materials" },
+        ]
+        
       },
     }),
     defineField({
