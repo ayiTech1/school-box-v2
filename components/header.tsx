@@ -34,7 +34,7 @@ const Header = async () => {
           <CartIcon />
           <FavoriteButton />
 
-          {/* {user && (
+          {user && (
             <Link
               href={"/orders"}
               className="group relative hover:text-shop_light_green hoverEffect"
@@ -44,7 +44,7 @@ const Header = async () => {
                 {orders?.length ? orders?.length : 0}
               </span>
             </Link>
-          )} */}
+          )} 
 
           <ClerkLoaded>
             <SignedIn>
