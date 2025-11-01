@@ -15,16 +15,16 @@ export const quickLinksData = [
 
 
 export const categoriesData = [
-    {title:"Boarding & Dormitory Essentials", href:"/boarding-dormitory-essentials"},
-    {title:"Kitchen/Feeding Items", href:"/kitchen-feeding-items"},
-    {title:"Toiletries & Personal Care", href:"/category/chopbox"},
-    {title:"School Supplies", href:"/category/school-supplies"},
+    {title:"Bedsheet & Pillow", href:"/category/bedsheet-pillow"},
+    {title:"Provision", href:"/category/provision"},
+    {title:"Personal Care", href:"/category/personal-care"},
+    {title:"School Bags", href:"/category/school-bags"},
     {title:"School Uniforms", href:"/category/school-uniforms"},
-    {title:"Bags & Accessories", href:"/category/bags-accessories"},
-    {title:"Academic Materials", href:"/category/Academic Materials"},
+    {title:"ChopBox & Tranks ", href:"/category/chopbox-tranks"},
+    {title:"Academic Materials", href:"/category/academic-materials"},
 ];
 export const productType =[
     {title:"Basic Needs", value: "basic-needs" },
     {title:"Cleaning Materials", value: "cleaning-materials" },
-    { title: "Learning Materials", value: "learning-materials" },
+    { title: "Academic Materials", value: "academic-materials" },
 ]
