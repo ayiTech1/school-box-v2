@@ -85,7 +85,7 @@ export const productType = defineType({
         list:[
             {title:"Basic Needs", value: "basic-needs" },
             {title:"Cleaning Materials", value: "cleaning-materials" },
-            { title: "Learning Materials", value: "learning-materials" },
+            { title: "Academic Materials", value: "academic-materials" },
         ]
         
       },
