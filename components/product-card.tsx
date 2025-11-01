@@ -1,7 +1,6 @@
 import { Product } from "@/sanity.types";
 import { urlFor } from "@/sanity/lib/image";
 import Image from "next/image";
-import React from "react";
 import Link from "next/link";
 import { StarIcon } from "@sanity/icons";
 import { Flame } from "lucide-react";
@@ -12,7 +11,7 @@ import AddToCartButton from "./add-to-cart-button";
 
 const ProductCard = ({ product }: { product: Product }) => {
   return (
-    <div className="text-sm border rounded-md border-darkBlue/20 group bg-white">
+     <div className="text-sm border rounded-md border-darkBlue/20 group bg-white">
       <div className="relative group overflow-hidden bg-shop_light_bg">
         {product?.images && (
           <Link href={`/product/${product?.slug?.current}`}>
@@ -48,7 +47,15 @@ const ProductCard = ({ product }: { product: Product }) => {
       <div className="p-3 flex flex-col gap-2">
         {product?.categories && (
           <p className="uppercase line-clamp-1 text-xs font-medium text-lightText">
-            {product.categories.map((cat) => cat).join(", ")}
+            {product.categories
+              .map((cat) =>
+                typeof cat === "string"
+                  ? cat
+                  : 
+                    (cat as any)?.title ?? (cat as any)?._ref ?? ""
+              )
+              .filter(Boolean)
+              .join(", ")}
           </p>
         )}
         <Title className="text-sm line-clamp-1">{product?.name}</Title>
