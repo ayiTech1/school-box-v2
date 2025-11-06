@@ -50,7 +50,7 @@ const ProductCard = ({ product }: { product: Product }) => {
       </div>
 
       {/* Text Section */}
-      <div className="p-2 sm:p-3 flex flex-col gap-1.5 sm:gap-2">
+      <div className="p-2 sm:p-1 flex flex-col gap-1.5 sm:gap-1">
         {product?.categories && (
           <p className="uppercase line-clamp-1 text-xs font-medium text-lightText">
             {product.categories
