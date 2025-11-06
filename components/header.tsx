@@ -22,29 +22,40 @@ const Header = async () => {
   }
 
   return (
-    <header className="sticky top-0 z-50 py-5 bg-white/80 backdrop-blur-md">
+    <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100 py-3 sm:py-4">
       <Container className="flex items-center justify-between text-lightColor">
-        <div className="w-auto md:w-1/3 flex items-center gap-2 justify-start md:gap-0">
-          <MobileMenu />
+        {/* Left: Logo + Mobile Menu */}
+        <div className="flex items-center gap-2 md:gap-4">
+          <div className="block md:hidden">
+            <MobileMenu />
+          </div>
           <Logo />
         </div>
+
+        {/* Center: Menu (Hidden on mobile) */}
         <HeaderMenu />
-        <div className="w-auto md:w-1/3 flex items-center justify-end gap-5 md:gap-2.5">
-          <SearchBar />
+
+        {/* Right: Icons & Actions */}
+        <div className="flex items-center gap-3 sm:gap-4">
+          {/* Hide search on small screens */}
+          <div className="hidden md:block">
+            <SearchBar />
+          </div>
+
           <CartIcon />
           <FavoriteButton />
 
           {user && (
             <Link
               href={"/orders"}
-              className="group relative hover:text-shop_light_green hoverEffect"
+              className="relative hover:text-shop_light_green transition-colors"
             >
-              <Logs />
-              <span className="absolute -top-1 -right-1 bg-shop_btn_dark_green text-white h-3.5 w-3.5 rounded-full text-xs font-semibold flex items-center justify-center">
+              <Logs className="w-5 h-5" />
+              <span className="absolute -top-1 -right-1 bg-shop_btn_dark_green text-white h-3.5 w-3.5 rounded-full text-[10px] font-semibold flex items-center justify-center">
                 {orders?.length ? orders?.length : 0}
               </span>
             </Link>
-          )} 
+          )}
 
           <ClerkLoaded>
             <SignedIn>
