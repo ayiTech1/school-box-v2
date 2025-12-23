@@ -12,6 +12,7 @@ import { ClerkLoaded, SignedIn, UserButton } from "@clerk/nextjs";
 import Link from "next/link";
 import { Logs } from "lucide-react";
 import { getMyOrders } from "@/sanity/queries";
+import UserButtonWrapper from "./user-button-wrapper";
 
 const Header = async () => {
   const user = await currentUser();
@@ -37,20 +38,15 @@ const Header = async () => {
 
         {/* Right: Icons & Actions */}
         <div className="flex items-center gap-3 sm:gap-4">
-          {/* Hide search on small screens */}
-          <div className="hidden md:block">
-            <SearchBar />
-          </div>
-
-          <CartIcon />
-          <FavoriteButton />
+          <CartIcon className="w-4 h-4 md:w-5 md:h-5" />
+          <FavoriteButton className="w-4 h-4 md:w-5 md:h-5" />
 
           {user && (
             <Link
               href={"/orders"}
               className="relative hover:text-shop_light_green transition-colors"
             >
-              <Logs className="w-5 h-5" />
+              <Logs className="w-4 h-4 md:w-5 md:h-5" />
               <span className="absolute -top-1 -right-1 bg-shop_btn_dark_green text-white h-3.5 w-3.5 rounded-full text-[10px] font-semibold flex items-center justify-center">
                 {orders?.length ? orders?.length : 0}
               </span>
@@ -58,11 +54,10 @@ const Header = async () => {
           )}
 
           <ClerkLoaded>
-            <SignedIn>
-              <UserButton />
-            </SignedIn>
-            {!user && <SignIn />}
-          </ClerkLoaded>
+  <UserButtonWrapper />
+  {!user && <SignIn />}
+</ClerkLoaded>
+
         </div>
       </Container>
     </header>

@@ -68,6 +68,14 @@ const BLOG_CATEGORIES = defineQuery(
   }`
 );
 
+const SEARCH_PRODUCTS_QUERY = defineQuery(
+  `*[_type == "product" && (name match $query || description match $query || brand->name match $query)]{ ... }`
+);
+
+
+
+
+
 const OTHERS_BLOG_QUERY = defineQuery(`*[
   _type == "blog"
   && defined(slug.current)
@@ -98,4 +106,5 @@ export {
   SINGLE_BLOG_QUERY,
   BLOG_CATEGORIES,
   OTHERS_BLOG_QUERY,
+  SEARCH_PRODUCTS_QUERY,
 };
